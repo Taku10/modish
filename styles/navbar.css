@@ -1,0 +1,102 @@
+:root {
+    ---mont:  'Montserrat', sans-serif;
+    ---pop:  'Poppins', sans-serif;
+  
+    ---first: #e65540;
+    ---second: #94c2c1;
+     ---third: #555555;
+    ---fourth: #999999;
+    ---fifth: #222222;
+    ---sixth: #cccccc;
+    ---seventh: #888888;
+    ---eight: #111111;
+    ---nine: #333333;
+    --top-nav-bg: #f5f5f5;
+
+}
+
+.navbar-container{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    width: 100%;
+}
+
+.top-nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0rem;
+    background-color: var(--top-nav-bg);
+}
+
+.top-icons{
+    display: flex;
+    gap:1rem;
+    font-size: 1.2rem;
+}
+
+
+.nav-icon{
+    color: var(---seventh);
+    transition: .4s ease-in;
+}
+
+.nav-icon:hover{
+    color: var(---first);
+}
+
+.top-shipping-text p, .top-email p{
+    font-family: var(---mont);
+    font-weight: 400;
+    color: var(---seventh);
+    font-size:13px;
+}
+
+.main-nav{
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0rem;
+}
+
+
+.logo h1{
+    font-family: var(---mont);
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.logo span{
+    color: var(---first);
+    font-size: 2.5rem;
+}
+
+.nav-items{
+    display: flex;
+    gap:2rem;
+    align-items: center;
+}
+
+.nav-items li{
+    list-style: none;
+}
+
+.nav-items li a{
+    text-decoration: none;
+    color:var(---nine);
+    font-family: var(---mont);
+    font-weight: 400;
+    color: var(---seventh);
+    font-size:15px;
+}
+
+.log-cart{
+    display: flex;
+    align-items: center;
+    gap:2rem;
+}
+
+
+.log-cart-icon{
+
+}
