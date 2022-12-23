@@ -99,18 +99,17 @@
 
 
 .access-container {
-    border: 1px solid;
     width: 100%;
-    height: 21rem;
+    height: 25rem;
     display: flex;
     justify-content: center;
+    margin-top:4rem;
 }
 
 .access-wrapper {
     display: flex;
     height: 100%;
     width: 100%;
-    border: 1px solid;
     gap: 2rem;
     justify-content: center;
 }
@@ -119,9 +118,78 @@
     background-color: var(---product-bg);
     width: 25rem;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.access img{
+    width: 24rem;
+    transition: .4s ease;
+    margin-bottom: 8rem;
+    transition: .3s ease-in;
+}
+
+.access img:hover{
+    transform:scale(1.1);
 }
 
 .access button{
     position: absolute;
-    right: 0;
+    right: 6rem;
+    top:20rem;
+    background-color:white;
+    border: none;
+    height: 3rem;
+    width: 12rem;
+    font-family: var(---mont);
+    font-size: 16px;
+    cursor: pointer;
+    text-transform: uppercase;
 }
+
+.access button:hover{
+    background-color: var(---first);
+    color: white;
+}
+
+
+.bag img{
+   width: 18rem;
+   margin-bottom: 14rem; 
+}
+
+.home-products-container{
+    border: 1px solid;
+    height: 50rem;
+    margin-top:4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:3rem;
+}
+
+.home-products-container h1{
+    font-family: var(---mont);
+    font-weight: 700;
+    font-size:30px;
+    color: var(---fifth);
+    text-align: center;
+}
+
+.tab-container{
+    width: 80%;
+    
+}
+
+.tablist{
+    display: flex;
+    justify-content: center;
+}
+
+.react-tabs__tab {
+    color:var(---nine);
+    font-size: 15px solid;
+    font-weight: 400;
+    font-family: var(---mont);
+  }
