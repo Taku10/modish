@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import { GrFacebookOption } from 'react-icons/gr'
 import { BsInstagram } from 'react-icons/bs'
 import { FaPinterestP } from 'react-icons/fa'
@@ -10,6 +10,21 @@ import Link from 'next/link'
 
 
 const Navbar = () => {
+ const[nav, setNav]=useState(false)
+
+  useEffect(() => {
+    const changeNav = () => {
+      if (window.scrollY >= 1) {
+        setNav(true)
+      } else {
+        setNav(false)
+      } if (window.innerWidth <= 992) {
+        setNav(false)
+      }
+    }
+    window.addEventListener('scroll', changeNav);
+  })
+
   return (
     <div className='navbar-container'>
       <nav className="top-nav">
@@ -27,7 +42,7 @@ const Navbar = () => {
           <p>info@modish.com</p>
         </div>
       </nav>
-      <nav className="main-nav">
+      <nav className={`${nav ? 'main-nav active' : 'main-nav'}`}>
         <div className='logo'>
           <h1>Modish<span>.</span></h1>
         </div>
@@ -38,8 +53,13 @@ const Navbar = () => {
           <li><Link href=''>Contact</Link></li>
         </ul>
         <div className='log-cart'>
-          <BsPersonCircle  className='log-cart-icon'/>
-          <BsBag className='log-cart-icon'/>
+          <div className='log'>
+            <BsPersonCircle className='log-cart-icon' />
+          </div>
+          <div className='cart'>
+            <span>0</span>
+            <BsBag className='log-cart-icon' />
+          </div>
         </div>
       </nav>
     </div>

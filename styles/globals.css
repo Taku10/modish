@@ -25,6 +25,7 @@
 
 header {
   width: 100%;
+  position: relative;
 }
 
 main {
