@@ -1,7 +1,7 @@
 import React from 'react'
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-const HomeProducts = () => {
+const HomeProducts = ({ products }) => {
     return (
         <div className='home-products-container'>
             <h1>Our Products</h1>
@@ -15,7 +15,23 @@ const HomeProducts = () => {
                     </TabList>
 
                     <TabPanel>
-                        <h2>Any content 1</h2>
+                        <div className='item-panel-wrapper'>
+                            <div className='item-container'>
+                                <div className='item-image'>
+                                    <img src="" alt="" />
+                                </div>
+                                <p>item-name</p>
+                                <p>R 35</p>
+                            </div>
+                            <div className='item-container'>
+                                <div className='item-image'>
+                                    <img src="" alt="" />
+                                </div>
+                                <p>item-name</p>
+                                <p>R 35</p>
+                            </div>
+                        </div>
+
                     </TabPanel>
                     <TabPanel>
                         <h2>Any content 2</h2>
@@ -23,7 +39,7 @@ const HomeProducts = () => {
                     <TabPanel>
                         <h2>Any content 2</h2>
                     </TabPanel>
-                    
+
                 </Tabs>
             </div>
         </div>

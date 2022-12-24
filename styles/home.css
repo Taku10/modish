@@ -187,9 +187,29 @@
     justify-content: center;
 }
 
+.item-panel-wrapper{
+    display: flex;
+    gap:2rem;
+}
+
+.react-tabs__tab-panel {
+    display: none;
+    margin-top: 2rem;
+  }
+
+.item-container{
+    background-color: var(---product-bg);
+    height: 22rem;
+    width: 18rem;
+}
+
 .react-tabs__tab {
     color:var(---nine);
     font-size: 15px solid;
     font-weight: 400;
     font-family: var(---mont);
+  }
+
+  .item-container{
+    border: 1px solid;
   }
