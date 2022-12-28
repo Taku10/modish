@@ -161,7 +161,7 @@
 
 .home-products-container{
     border: 1px solid;
-    height: 60rem;
+    height: 70rem;
     margin-top:4rem;
     display: flex;
     flex-direction: column;
@@ -199,11 +199,35 @@
   }
 
 .item-container{
-    height: 22rem;
+    height: 27rem;
     width: 18rem;
-    border: 1px solid;
     display: flex;
     flex-direction: column;
+    gap:.8rem
+}
+
+.item-container:hover > .item-image button{
+    transform: translateY(0px);
+}
+
+.item-container:hover > .item-image .wish-icon{
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.item-container:hover > .item-image .wish-icon-fill{
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+
+.wish-icon:hover > .wish-icon-fill{
+    display: block;
+}
+
+
+.wish-icon:hover > .wish-icon{
+    display: none;
 }
 
 .react-tabs__tab {
@@ -221,8 +245,74 @@
     justify-content: center;
     height: 80%;
     background-color: var(---product-bg);
+    transition: .5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.item-image:hover{
+    filter: brightness(80%);
 }
 
   .item-image img{
     width: 9rem;
   }
+
+  .item-image button{
+    position: absolute;
+    top:18rem;
+    border: none;
+    color: white;
+    background-color: black;
+    width: 9rem;
+    height: 2.5rem;
+    border-radius: 1rem;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: var(---mont);
+    z-index: 45;
+    transition: .4s ease-in;
+    cursor: pointer;
+    transform: translateY(100px);
+  }
+
+  .item-image button:hover{
+    background-color: var(---first);
+  }
+
+  .wish-icon, .wish-icon-fill{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    opacity: 0;
+    cursor: pointer;
+    transition: 1s ease;
+  }
+
+  .wish-icon-fill{
+    color: red;
+    display: none;
+  }
+
+ .product-title, .product-price{
+    font-weight: 400;
+    font-family: var(---mont);
+    color: var(---third);
+    font-size: 16px;
+ }
+
+ .product-price{
+    font-size:16px ;
+ }
+
+ /* Video banner section */
+
+.video-banner-container{
+    background-image: url("../images/video-banner-image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    border: 1px solid;
+    height: 30rem;
+}
