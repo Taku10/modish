@@ -161,7 +161,7 @@
 
 .home-products-container{
     border: 1px solid;
-    height: 50rem;
+    height: 60rem;
     margin-top:4rem;
     display: flex;
     flex-direction: column;
@@ -189,6 +189,7 @@
 
 .item-panel-wrapper{
     display: flex;
+    flex-flow: row wrap;
     gap:2rem;
 }
 
@@ -198,9 +199,11 @@
   }
 
 .item-container{
-    background-color: var(---product-bg);
     height: 22rem;
     width: 18rem;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
 }
 
 .react-tabs__tab {
@@ -210,6 +213,16 @@
     font-family: var(---mont);
   }
 
-  .item-container{
-    border: 1px solid;
+
+
+.item-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    background-color: var(---product-bg);
+}
+
+  .item-image img{
+    width: 9rem;
   }
