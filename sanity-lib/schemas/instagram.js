@@ -22,5 +22,10 @@ export default {
         title: 'Caption',
         type: 'text',
       },
+      { 
+        name: 'likes',
+        title: 'Likes',
+        type: 'number',
+      },
     ]
   }
