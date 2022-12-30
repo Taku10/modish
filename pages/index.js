@@ -1,5 +1,5 @@
 import React from "react"
-import {HomeBanner, AccessoryCategory, HomeProducts, VideoBanner, Instagram} from "../components/"
+import {HomeBanner, AccessoryCategory, HomeProducts, VideoBanner, Instagram, Benefits} from "../components/"
 import { client } from '../lib/client'
 
 
@@ -14,6 +14,7 @@ const Home=({home_banner, access_category, products, instagram})=> {
       <HomeProducts products={products}/>
       <VideoBanner />
       <Instagram  instagram={instagram}/>
+      <Benefits/>
     </div>
   )
 }
