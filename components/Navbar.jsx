@@ -47,10 +47,10 @@ const Navbar = () => {
           <h1>Modish<span>.</span></h1>
         </div>
         <ul className='nav-items'>
-          <li><Link href=''>Home</Link></li>
-          <li><Link href=''>Shop</Link></li>
-          <li><Link href=''>About</Link></li>
-          <li><Link href=''>Contact</Link></li>
+          <li><Link href='/'>Home</Link></li>
+          <li><Link href='/shop'>Shop</Link></li>
+          <li><Link href='/about'>About</Link></li>
+          <li><Link href='/contact'>Contact</Link></li>
         </ul>
         <div className='log-cart'>
           <div className='log'>

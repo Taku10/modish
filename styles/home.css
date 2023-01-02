@@ -405,6 +405,7 @@
     position: relative;
     overflow: hidden;
     transition: .4s ease;
+    cursor: pointer;
 }
 
 .insta-post:hover > .caption-photo {
@@ -482,8 +483,8 @@
 /* Benefits section */
 
 .benefits-container{
-    border:1px solid;
-    height: 10rem;
+    margin-top:2rem;
+    height: 6rem;
     display: flex;
     justify-content: center;
 }
@@ -501,6 +502,9 @@
     flex-direction: column;
     gap:.5rem;
     text-align: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
 }
 
 .benefit h3{
