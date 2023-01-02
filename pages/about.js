@@ -1,11 +1,12 @@
 import React from 'react'
 import { client } from '../lib/client'
-import {AboutBanner} from '../components'
+import {AboutBanner, AboutDetails} from '../components'
 
 const About = () => {
   return (
     <div className='about-container'>
       <AboutBanner />
+      <AboutDetails />
     </div>
   )
 }
