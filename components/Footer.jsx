@@ -44,13 +44,13 @@ const Footer = () => {
         <div className='footer-newsletter footer-row'>
           <h3>NEWSLETTER</h3>
           <form action="">
-            <input type="text" onChange='' placeHolder='email@example.com'/>
+            <input type="text" onChange='' placeHolder='email@example.com' />
             <button>SUBSCRIBE</button>
           </form>
         </div>
       </div>
       <div className='copyright'>
-          <p>Copyright © 2023 Takunda. All rights reserved.</p>
+        <p>Copyright © 2023 Takunda Madziwa. All rights reserved.</p>
       </div>
     </div>
   )

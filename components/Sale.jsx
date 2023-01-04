@@ -1,6 +1,7 @@
 import React from 'react'
 import { urlFor } from '../lib/client'
 import { BsHeart } from 'react-icons/bs'
+import SaleSticker from './SaleSticker'
 
 
 const Sale = ({ item }) => {
@@ -8,6 +9,7 @@ const Sale = ({ item }) => {
   return (
     <div className='item-container'>
       <div className='item-image'>
+        <SaleSticker/>
         <BsHeart className='wish-icon' />
         <img src={urlFor(image && image[0])} alt="" />
         <button>ADD TO CART</button>

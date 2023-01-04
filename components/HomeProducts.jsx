@@ -6,6 +6,7 @@ import Featured from './Featured';
 import Sale from './Sale';
 import TopRate from './TopRate';
 
+
 const HomeProducts = ({ products }) => {
 
 

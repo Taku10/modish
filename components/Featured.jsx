@@ -1,12 +1,16 @@
 import React from 'react'
 import { urlFor } from '../lib/client'
 import { BsHeart } from 'react-icons/bs'
+import SaleSticker from './SaleSticker';
+import NewSticker from './NewSticker';
 
 const Featured = ({ item }) => {
-  const { image, title, price } = item
+  const { image, title, price ,sale} = item
   return (
     <div className='item-container'>
       <div className='item-image'>
+        {sale && <SaleSticker />}
+        {item.new && <NewSticker />}
         <BsHeart className='wish-icon' />
         <img src={urlFor(image && image[0])} alt="" />
         <button>ADD TO CART</button>
