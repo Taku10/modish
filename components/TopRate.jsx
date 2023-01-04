@@ -10,7 +10,7 @@ const TopRate = ({ item }) => {
     <div className='item-container'>
       <div className='item-image'>
         {sale && <SaleSticker />}
-        {item.new && <NewSticker />}
+        {item.newl && <NewSticker />}
         <BsHeart className='wish-icon' />
         <img src={urlFor(image && image[0])} alt="" />
         <button>ADD TO CART</button>

@@ -11,7 +11,7 @@ const BestSeller = ({ item }) => {
         <div className='item-container'>
             <div className='item-image'>
                { sale && <SaleSticker />}
-               {item.new && <NewSticker/>}
+               {item.newl && <NewSticker/>}
                 <BsHeart className='wish-icon' />
                 <BsHeartFill className='wish-icon-fill' />
                 <img src={urlFor(image && image[0])} alt="" />

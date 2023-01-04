@@ -160,12 +160,13 @@
 }
 
 .home-products-container {
-    height: 70rem;
+    max-height: 70rem;
     margin-top: 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 3rem;
+    margin-bottom: 9rem;
 }
 
 .home-products-container h1 {
@@ -178,6 +179,8 @@
 
 .tab-container {
     width: 80%;
+    display: grid;
+    place-content: center;
 
 }
 

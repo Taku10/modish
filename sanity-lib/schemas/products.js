@@ -38,7 +38,7 @@ export default {
         type: 'boolean',
       },
       { 
-        name: 'new',
+        name: 'newl',
         title: 'New',
         type: 'boolean',
       },

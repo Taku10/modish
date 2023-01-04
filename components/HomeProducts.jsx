@@ -25,7 +25,7 @@ const HomeProducts = ({ products }) => {
 
                     <TabPanel>
                         <div className='item-panel-wrapper'>
-                            {products.filter((item) => item.bestseller ===true).map((item) => (
+                            {products.filter((item) => item.bestseller ===true).slice(0, 8).map((item) => (
                                 <BestSeller item={item} />
                               
                             ))}
@@ -33,7 +33,7 @@ const HomeProducts = ({ products }) => {
                     </TabPanel>
                     <TabPanel>
                     <div className='item-panel-wrapper'>
-                            {products.filter((item) => item.featured ===true).map((item) => (
+                            {products.filter((item) => item.featured ===true).slice(0, 8).map((item) => (
                                 <Featured item={item} />
                               
                             ))}
@@ -41,7 +41,7 @@ const HomeProducts = ({ products }) => {
                     </TabPanel>
                     <TabPanel>
                     <div className='item-panel-wrapper'>
-                            {products.filter((item) => item.sale ===true).map((item) => (
+                            {products.filter((item) => item.sale ===true).slice(0, 6).map((item) => (
                                 <Sale item={item} />
                               
                             ))}
@@ -49,7 +49,7 @@ const HomeProducts = ({ products }) => {
                     </TabPanel>
                     <TabPanel>
                     <div className='item-panel-wrapper'>
-                            {products.filter((item) => item.top_rate ===true).map((item) => (
+                            {products.filter((item) => item.top_rate ===true).slice(0, 8).map((item) => (
                                 <TopRate item={item} />
                               
                             ))}
