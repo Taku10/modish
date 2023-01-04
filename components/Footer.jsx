@@ -4,6 +4,8 @@ import { BsInstagram } from 'react-icons/bs'
 import { FaPinterestP } from 'react-icons/fa'
 import { GrSnapchat } from 'react-icons/gr'
 import { AiFillYoutube } from 'react-icons/ai'
+import Link from 'next/link'
+
 
 const Footer = () => {
   return (
@@ -23,7 +25,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="footer-categeries footer-row">
-          <h3>Categories</h3>
+          <h3>CATEGORIES</h3>
           <ul className='footer-nav-items'>
             <li><Link href=''>Men</Link></li>
             <li><Link href=''>Women</Link></li>
@@ -32,6 +34,7 @@ const Footer = () => {
           </ul>
         </div>
         <div className='footer-links footer-row'>
+          <h3>LINK</h3>
           <ul className='footer-nav-items'>
             <li><Link href=''>Search</Link></li>
             <li><Link href=''>About Us</Link></li>
@@ -39,10 +42,15 @@ const Footer = () => {
           </ul>
         </div>
         <div className='footer-newsletter footer-row'>
+          <h3>NEWSLETTER</h3>
           <form action="">
             <input type="text" onChange='' placeHolder='email@example.com'/>
+            <button>SUBSCRIBE</button>
           </form>
         </div>
+      </div>
+      <div className='copyright'>
+          <p>Copyright © 2023 Takunda. All rights reserved.</p>
       </div>
     </div>
   )

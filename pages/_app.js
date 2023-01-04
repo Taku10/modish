@@ -6,6 +6,7 @@ import '../styles/navbar.css'
 import '../styles/home.css'
 import '../styles/about.css'
 import '../styles/contact.css'
+import '../styles/footer.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import 'react-tabs/style/react-tabs.css';
