@@ -1,0 +1,44 @@
+:root {
+    ---mont: 'Montserrat', sans-serif;
+    ---pop:  'Poppins', sans-serif;
+  
+    ---first: #e65540;
+    ---second: #94c2c1
+     ---third: #555555;
+    ---fourth: #999999;
+    ---fifth: #222222;
+    ---sixth: #cccccc;
+    ---seventh: #888888;
+    ---eight: #111111;
+    
+  }
+
+  .shop-contianer{
+    height: 100%;
+    width: 100%;
+  }
+
+  .shop-banner-container{
+    height: 30vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9 )), url('../images/shop-banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat:no-repeat;
+}
+
+.shop-banner-container h1{
+    color: white;
+    font-size: 50px;
+    font-weight: 700;
+    font-family: var(---mont);
+}
+
+.shop-banner-container p{
+    font-family: var(---mont);
+    font-size: 18px;
+    color: white;
+}
