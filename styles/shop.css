@@ -16,7 +16,7 @@
     ---product-bg: #f3f3f3;
 }
 
-  .shop-contianer{
+  .shop-container{
     height: 100%;
     width: 100%;
   }
@@ -48,15 +48,139 @@
 
 
 .shop-products-container{
+    display: flex;
+    justify-content: center;
     width: 100%;
     height: 100%;
+
+    padding-top:4rem ;
 
 }
 
 .shop-products-wrapper{
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: 1fr 4fr;
+ 
+    width: 80%;
 }
+
+.shop-grid-left{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+ 
+}
+
+.shop-grid-right{
+    display: flex;
+    flex-direction: column;
+    gap:4rem;
+}
+
+
+.sorting-options{
+    display: flex;
+    gap:4rem;
+}
+
+
+.sorting-options select{
+    font-family: var(---mont);
+    font-size: 16px;
+    color: #444444;
+    font-weight: 400;
+    height: 2rem;
+}
+
+
+.sorting-options select option{
+    font-family: var(---mont);
+    font-size: 16px;
+    color: #444444;
+    font-weight: 400;
+}
+
+.sorting-options select:focus{
+    outline: none;
+}
+
+
+
+
+
+.all-products{
+   
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap:1rem
+}
+
+
+.product-container {
+    height: 27rem;
+    width: 18rem;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem
+}
+
+.product-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80%;
+    background-color: var(---product-bg);
+    transition: .5s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.product-image:hover {
+    filter: brightness(90%);
+}
+
+.product-image img {
+    width: 9rem;
+}
+
+.product-image button {
+    position: absolute;
+    top: 18rem;
+    border: none;
+    color: white;
+    background-color: black;
+    width: 9rem;
+    height: 2.5rem;
+    border-radius: 1rem;
+    font-size: 15px;
+    font-weight: 400;
+    font-family: var(---mont);
+    z-index: 45;
+    transition: .4s ease-in;
+    cursor: pointer;
+    transform: translateY(100px);
+}
+
+.product-image button:hover {
+    background-color: var(---first);
+}
+
+
+.product-container:hover>.product-image button {
+    transform: translateY(0px);
+}
+
+.product-container:hover>.product-image .wish-icon {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.product-container:hover>.product-image .wish-icon-fill {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
 
 
 
@@ -91,3 +215,13 @@
 .categories-options p:hover{
     color: var(---first);
 }
+
+
+
+
+
+
+
+
+
+
