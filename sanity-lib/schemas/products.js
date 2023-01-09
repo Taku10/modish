@@ -23,6 +23,15 @@ export default {
         type: 'number',
       },
       { 
+        name: 'slug',
+        title: 'Slug',
+        type: 'slug',
+        options: {
+          source: 'title',
+          maxLength: 90,
+        }
+      },
+      { 
         name: 'category',
         title: 'Category',
         type: 'string',

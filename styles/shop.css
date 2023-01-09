@@ -109,13 +109,16 @@
 
 
 .all-products{
-   
+    height: 100%;
+}
+
+
+.infinite-scroller{
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     gap:1rem
 }
-
 
 .product-container {
     height: 27rem;
@@ -210,12 +213,37 @@
     font-size: 15px;
     font-weight: 400;
     font-family: var(---mont);
+    cursor: pointer;
 }
 
 .categories-options p:hover{
     color: var(---first);
 }
 
+/* Search Section */
+
+.search-container form{
+    position: relative;
+}
+
+.search-container form input{
+    width:12rem;
+    height: 3rem;
+    padding: 0rem 1rem;
+    font-family: var(---mont);
+    font-size: 13px;
+    color: #555555;
+}
+
+.search-container form input:focus{
+    outline: none;
+}
+
+.search-icon{
+    position: absolute;
+    right:2rem;
+    top: 1rem;
+}
 
 
 
