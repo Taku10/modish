@@ -9,10 +9,8 @@ const ShopProducts = ({ products }) => {
   const[data, setData]=useState(products);
   const[hasMore, setHasMore]= useState(true)
 
-  const fetchMoreData =()=>{
-    setTimeout(()=>{
-      setData(data.concat(products))
-    }, 500)
+  const loadMore =()=>{
+    setData(products)
   }
 
   return (
@@ -25,7 +23,7 @@ const ShopProducts = ({ products }) => {
         <div className='shop-grid-right'>
           <SortingOptions />
           <div className='all-products'>
-            <InfiniteScroll dataLength={data.length} next={fetchMoreData} hasMore={hasMore} className='infinite-scroller'>
+            <InfiniteScroll pageStart={0} loadMore={loadMore} hasMore={true || false} useWindow={false} className='infinite-scroller'>
               {data.map((item, i) => (
                 <Product item={item} key={i} />
               ))}

@@ -8,6 +8,7 @@ import '../styles/about.css'
 import '../styles/contact.css'
 import '../styles/footer.css'
 import '../styles/shop.css'
+import '../styles/cart.css'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import 'react-tabs/style/react-tabs.css';

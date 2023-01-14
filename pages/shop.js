@@ -3,7 +3,7 @@ import { ShopBanner, ShopProducts } from '../components'
 import { client } from '../lib/client'
 
 const Shop = ({products}) => {
-  console.log(products)
+
   return (
     <div className='shop-container'>
         <ShopBanner/>

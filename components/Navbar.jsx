@@ -58,7 +58,7 @@ const Navbar = () => {
           </div>
           <div className='cart'>
             <span>0</span>
-            <BsBag className='log-cart-icon' />
+            <Link href='/cart'><BsBag className='log-cart-icon' /></Link>
           </div>
         </div>
       </nav>
