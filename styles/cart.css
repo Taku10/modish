@@ -40,3 +40,8 @@
     font-weight: 700;
     font-family: var(---mont);
 }
+
+.item-counter {
+    display: flex;
+    gap: 1rem;
+}
