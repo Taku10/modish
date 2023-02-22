@@ -17,67 +17,70 @@
 
 }
 
-.cart-container{
+.cart-container {
     height: 100%;
     width: 100%;
-  }
+}
 
-  .cart-banner-container{
+.cart-banner-container {
     height: 30vh;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9 )), url('../images/cart-banner.jpg');
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9)), url('../images/cart-banner.jpg');
     background-size: cover;
     background-position: center;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
 }
 
-.cart-banner-container h1{
+.cart-banner-container h1 {
     color: white;
     font-size: 50px;
     font-weight: 700;
     font-family: var(---mont);
 }
 
-.cart-products-container{
+.cart-products-container {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap:1.5rem
 }
 
-.cart-table{
+.cart-table {
     margin-top: 6rem;
     width: 80%;
     height: 100%;
 }
 
-.cart-table-body{
+.cart-table-body {
     display: flex;
     flex-direction: column;
     height: 100%;
-    gap:2rem;
+    gap: 2rem;
     border-bottom: 1px solid #e6e6e6;
 }
 
-.cart-headers{
+.cart-headers {
     display: flex;
-    gap:2rem;
+    gap: 2rem;
     width: 100%;
     justify-content: space-between;
 }
 
-.cart-item-container{
+.cart-item-container {
     display: flex;
     flex-direction: column;
 }
 
-.cart-items{
+.cart-items {
     width: 100%;
     display: flex;
-    gap:2rem;
+    gap: 2rem;
     justify-content: space-between;
     align-items: center;
     border: 1px solid #e6e6e6;
@@ -85,7 +88,7 @@
     border-bottom: none;
 }
 
-.cart-items td{
+.cart-items td {
     text-align: center;
     width: 100%;
     font-family: var(---mont);
@@ -94,20 +97,20 @@
     font-size: 15px;
 }
 
-.cart-headers th{
+.cart-headers th {
     font-size: 13px;
     font-family: var(---mont);
-    font-weight: 900;
+    font-weight: 700;
     color: var(---third);
     width: 100%;
 }
 
-.cart-image-container{
+.cart-image-container {
     display: flex;
     justify-content: center;
 }
 
-.cart-image{
+.cart-image {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -119,8 +122,8 @@
     width: 6rem;
 }
 
-.cart-image img{
-    object-fit:cover;
+.cart-image img {
+    object-fit: cover;
     width: 6rem;
 }
 
@@ -131,7 +134,7 @@
     align-items: center;
 }
 
-.item-counter button{
+.item-counter button {
     background-color: #e6e6e6;
     border: none;
     height: 2.5rem;
@@ -139,12 +142,83 @@
     cursor: pointer;
 }
 
-.item-minus, .item-plus{
-    color: var(---seventh) ;
+.item-counter button:active{
+    background-color: var(---first);
+    
+}
+
+.item-counter button:active .item-minus{
+    color: white;
+}
+
+.item-counter button:active .item-plus{
+    color: white;
+}
+
+.item-minus,
+.item-plus {
+    color: var(---seventh);
     font-weight: 900;
 }
 
-.item-counter .item-qty{
+.item-counter .item-qty {
     font-weight: 700;
     font-family: var(---mont);
 }
+
+.total-container{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    margin-right: 10%;
+    border: 1px solid #e6e6e6;
+    width: 20rem;
+    height: 12rem;
+    gap:2rem;
+    padding:2% 4%;
+    
+}
+
+.total-container h2{
+    font-family: var(---mont);
+    font-size: 23px;
+    color: #333333;
+    font-weight: 700;
+}
+
+.subtotal-wrapper{
+    display: flex;
+    gap: 4rem;
+    font-family: var(---mont);
+    border-bottom: 2px dotted #afafaf;
+    padding-bottom: 3%;
+}
+
+.subtotal-wrapper p{
+    font-weight: 700;
+    font-size: 17px;
+}
+
+.subtotal-wrapper .subtotal {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.total-container button{
+    background:black ;
+    color:white;
+    font-family: var(---mont);
+    font-size: 15px;
+    font-weight: 400;
+    height: 3rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: .4s ease-in;
+    border: none;
+}
+
+
+.total-container button:hover{
+    background-color: var(---first);
+}
+

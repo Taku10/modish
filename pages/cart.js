@@ -54,12 +54,18 @@ const Cart = () => {
                   </div>
                 </td>
                 <td>R 2000</td>
-
               </tr>
             </div>
-
           </tbody>
         </table>
+        <div className='total-container'>
+            <h2>CART TOTALS</h2>
+            <div className='subtotal-wrapper'>
+              <p>Subtotal:</p>
+              <p className='subtotal'>R 488</p>
+            </div>
+            <button>PROCEED TO CHECKOUT</button>
+        </div>
       </div>
     </div>
   )
