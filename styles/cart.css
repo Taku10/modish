@@ -8,7 +8,7 @@
     ---fourth: #999999;
     ---fifth: #222222;
     ---sixth: #cccccc;
-    ---seventh: #888888;
+    ---seventh: #4b4b4b;
     ---eight: #111111;
     ---nine: #333333;
     --top-nav-bg: #f5f5f5;
@@ -41,7 +41,110 @@
     font-family: var(---mont);
 }
 
+.cart-products-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.cart-table{
+    margin-top: 6rem;
+    width: 80%;
+    height: 100%;
+}
+
+.cart-table-body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    gap:2rem;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.cart-headers{
+    display: flex;
+    gap:2rem;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.cart-item-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-items{
+    width: 100%;
+    display: flex;
+    gap:2rem;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #e6e6e6;
+    height: 12rem;
+    border-bottom: none;
+}
+
+.cart-items td{
+    text-align: center;
+    width: 100%;
+    font-family: var(---mont);
+    font-weight: 400;
+    color: var(---third);
+    font-size: 15px;
+}
+
+.cart-headers th{
+    font-size: 13px;
+    font-family: var(---mont);
+    font-weight: 900;
+    color: var(---third);
+    width: 100%;
+}
+
+.cart-image-container{
+    display: flex;
+    justify-content: center;
+}
+
+.cart-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(---product-bg);
+    transition: .5s ease;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    width: 6rem;
+}
+
+.cart-image img{
+    object-fit:cover;
+    width: 6rem;
+}
+
 .item-counter {
     display: flex;
     gap: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.item-counter button{
+    background-color: #e6e6e6;
+    border: none;
+    height: 2.5rem;
+    width: 2.5rem;
+    cursor: pointer;
+}
+
+.item-minus, .item-plus{
+    color: var(---seventh) ;
+    font-weight: 900;
+}
+
+.item-counter .item-qty{
+    font-weight: 700;
+    font-family: var(---mont);
 }
