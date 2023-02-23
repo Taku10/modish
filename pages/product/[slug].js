@@ -1,9 +1,12 @@
 import React from 'react'
 import { client, urlFor } from '../../lib/client'
 import { HiMinus, HiPlus } from 'react-icons/hi'
+import { Accordian } from '../../components'
+import {data} from '../../accordian/data'
 
 const ProductDetails = ({ products }) => {
 
+    console.log(data)
     const { title, price, image } = products
     console.log(title)
 
@@ -24,23 +27,23 @@ const ProductDetails = ({ products }) => {
                         </div>
                         <div className='details-options'>
                             <div className='choose-size'>
-                                <label htmlFor='size'>Size:</label>
+                                <label htmlFor='size'>Size</label>
                                 <select id='size' autoFocus={false}>
                                     <option value="" key="">Choose an option</option>
-                                    <option value="" key="">Size S</option>
-                                    <option value="" key="">Size M</option>
-                                    <option value="" key="">Size L</option>
-                                    <option value="" key="">Size XL</option>
+                                    <option value="s" key="">Size S</option>
+                                    <option value="m" key="">Size M</option>
+                                    <option value="l" key="">Size L</option>
+                                    <option value="xl" key="">Size XL</option>
                                 </select>
                             </div>
                             <div className='choose-color'>
-                                <label htmlFor='color'>Color:</label>
+                                <label htmlFor='color'>Color</label>
                                 <select id='color'>
                                     <option value="" key="">Choose an option</option>
-                                    <option value="" key="">Gray</option>
-                                    <option value="" key="">Red</option>
-                                    <option value="" key="">Black</option>
-                                    <option value="" key="">Blue</option>
+                                    <option value="gray" key="">Gray</option>
+                                    <option value="red" key="">Red</option>
+                                    <option value="black" key="">Black</option>
+                                    <option value="blue" key="">Blue</option>
                                 </select>
                             </div>
                         </div>
@@ -50,8 +53,13 @@ const ProductDetails = ({ products }) => {
                                 <p className='item-qty-details'>0</p>
                                 <button><HiPlus className='item-plus-details' /></button>
                             </div>
-                            <button>ADD TO CART</button>
+                            <button className='add-to-cart-details'>ADD TO CART</button>
                         </div>
+                    </div>
+                    <div className='accordian-contianer'>
+                        {data.map((item, i)=>(
+                            <Accordian item={item} key={i}/>
+                        ))}
                     </div>
                 </div>
             </div>
