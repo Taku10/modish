@@ -4,10 +4,12 @@ import NewSticker from './NewSticker'
 import { BsHeart } from 'react-icons/bs'
 import { BsHeartFill } from 'react-icons/bs'
 import { urlFor } from '../lib/client'
+import Link from 'next/link';
+
 
 const Product = ({item}) => {
 
-    const{sale, newl, image, title, price}=item
+    const{sale, newl, image, title, price, slug}=item
     return (
         <div className='product-container'>
             <div className='product-image'>
@@ -18,7 +20,7 @@ const Product = ({item}) => {
                 <img src={urlFor(image && image[0])} alt="" />
                 <button>ADD TO CART</button>
             </div>
-            <p className='product-title'>{title}</p>
+            <Link href={`/product/${slug.current}`}><p className='product-title'>{title}</p></Link>
             <p className='product-price'>R {price}</p>
         </div>
     )

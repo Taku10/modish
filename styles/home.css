@@ -208,6 +208,14 @@
     gap: .8rem
 }
 
+.item-container a {
+    font-weight: 400;
+    font-family: var(---mont);
+    color: var(---third);
+    font-size: 16px;
+    text-decoration: none;
+}
+
 .sale-sticker{
     position: absolute;
     top:1rem;

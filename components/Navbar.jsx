@@ -26,8 +26,8 @@ const Navbar = () => {
   })
 
   return (
-    <div className='navbar-container'>
-      <nav className="top-nav">
+    <div className={`${nav ? 'navbar-container active' : 'navbar-container'}`}>
+      <nav className={`${nav ? 'top-nav active' : 'top-nav'}`}>
         <div className="top-icons">
           <GrFacebookOption className='nav-icon' />
           <BsInstagram className='nav-icon' />
@@ -42,7 +42,7 @@ const Navbar = () => {
           <p>info@modish.com</p>
         </div>
       </nav>
-      <nav className={`${nav ? 'main-nav active' : 'main-nav'}`}>
+      <nav className= 'main-nav'>
         <div className='logo'>
           <h1>Modish<span>.</span></h1>
         </div>
