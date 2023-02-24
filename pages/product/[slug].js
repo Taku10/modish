@@ -1,20 +1,27 @@
-import React from 'react'
+import React,{useRef} from 'react'
 import { client, urlFor } from '../../lib/client'
 import { HiMinus, HiPlus } from 'react-icons/hi'
 import { Accordian } from '../../components'
-import {data} from '../../accordian/data'
+import { data } from '../../accordian/data'
 
 const ProductDetails = ({ products }) => {
 
-    console.log(data)
     const { title, price, image } = products
-    console.log(title)
+
+    const pic = useRef(image)
+    console.log(pic.current.height)
+
+    let imageHeight =pic.current.height;
+
+   
 
     return (
         <div className='product-details-container'>
             <div className='product-details-wrapper'>
                 <div className='details-grid-1'>
-                    <img src={urlFor(image && image[0])} />
+                    <div className='details-image'>
+                        <img ref={pic} src={urlFor(image && image[0])} />
+                    </div>
                 </div>
                 <div className='details-grid-2'>
                     <div className='details-wrapper'>
@@ -29,21 +36,21 @@ const ProductDetails = ({ products }) => {
                             <div className='choose-size'>
                                 <label htmlFor='size'>Size</label>
                                 <select id='size' autoFocus={false}>
-                                    <option value="" key="">Choose an option</option>
-                                    <option value="s" key="">Size S</option>
-                                    <option value="m" key="">Size M</option>
-                                    <option value="l" key="">Size L</option>
-                                    <option value="xl" key="">Size XL</option>
+                                    <option value="" key="1">Choose an option</option>
+                                    <option value="s" key="s">Size S</option>
+                                    <option value="m" key="m">Size M</option>
+                                    <option value="l" key="l">Size L</option>
+                                    <option value="xl" key="xl">Size XL</option>
                                 </select>
                             </div>
                             <div className='choose-color'>
                                 <label htmlFor='color'>Color</label>
                                 <select id='color'>
-                                    <option value="" key="">Choose an option</option>
-                                    <option value="gray" key="">Gray</option>
-                                    <option value="red" key="">Red</option>
-                                    <option value="black" key="">Black</option>
-                                    <option value="blue" key="">Blue</option>
+                                    <option value="" key="2">Choose an option</option>
+                                    <option value="gray" key="gray">Gray</option>
+                                    <option value="red" key="red">Red</option>
+                                    <option value="black" key="black">Black</option>
+                                    <option value="blue" key="blue">Blue</option>
                                 </select>
                             </div>
                         </div>
@@ -55,12 +62,13 @@ const ProductDetails = ({ products }) => {
                             </div>
                             <button className='add-to-cart-details'>ADD TO CART</button>
                         </div>
+                        <div className='accordian-container'>
+                            {data.map((item, i) => (
+                                <Accordian item={item} i={i} key={item.id} />
+                            ))}
+                        </div>
                     </div>
-                    <div className='accordian-contianer'>
-                        {data.map((item, i)=>(
-                            <Accordian item={item} key={i}/>
-                        ))}
-                    </div>
+
                 </div>
             </div>
         </div>

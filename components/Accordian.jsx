@@ -1,16 +1,25 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-const Accordian = ({item}) => {
+const Accordian = ({item, i}) => {
+
+    const[select, setSelect]=useState(null)
 
     const{title, content}=item
+    const toggle =(i)=>{
+      if(select === i){
+          return setSelect(null)
+      }
+
+      setSelect(i)
+  }
 
   return (
     <div className='accordian-item'>
-      <div className='acc-title'>
+      <div className='acc-title' onClick={()=> toggle(i)}>
            <h2>{title}</h2>
-           <span>+</span> 
+           <span>{select === i ? '-': '+' }</span> 
       </div>
-      <p className='acc-content'>{content}</p>
+      <p className={`${select === i ? 'acc-content show': ' acc-content' }`}>{content}</p>
     </div>
   )
 }
