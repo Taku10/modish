@@ -37,7 +37,8 @@
     display: flex;
     justify-content: center;
     background-color: #f3f3f3;
-    height: 35rem;
+    height: 42rem;
+    align-items: center;
 }
 
 .details-image img{
@@ -259,6 +260,28 @@
 /* Related products section */
 
 .related-container{
-    border: 1px solid;
-    height: 20rem;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap:2rem;
+    height: 30rem;
+    margin-top: 12rem;
+    align-items: center;
+}
+
+.related-wrapper{
+    display: flex;
+    height: 30rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+    
+}
+
+.related-container h1{
+    font-family: var(---mont);
+    font-size: 40px;
+    font-weight: 500;
+    color: #222222;
 }

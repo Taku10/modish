@@ -3,17 +3,20 @@ import ProductRelated from './ProductRelated'
 
 const Related = ({ related, products }) => {
 
-    const findDuplicate = related.find((item)=>item.slug.current=== products.slug.current )
-    const sub = related.filter((item)=> item.sub_category === products.sub_category).slice(0, 4)
-    console.log(findDuplicate )
+    const sub = related.filter((item) => item.sub_category === products.sub_category).slice(0, 4)
+    const duplicate_product = sub.find((item, i) => item.slug.current === products.slug.current)
+
 
 
     return (
         <div className='related-container'>
+            <h1>Related Products</h1>
+            <div className='related-wrapper'>
+                {sub.map((item) => (
+                    <ProductRelated item={item} />
+                ))}
+            </div>
 
-            {sub.map((item) => (
-                <ProductRelated item={item} />
-            ))}
         </div>
     )
 }
