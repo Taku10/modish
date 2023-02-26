@@ -7,10 +7,9 @@ import { urlFor } from '../lib/client'
 import Link from 'next/link';
 
 
-const Product = ({item, related}) => {
+const ProductRelated = ({item}) => {
 
     const{sale, newl, image, title, price, slug}=item
-
     return (
         <div className='product-container'>
             <div className='product-image'>
@@ -27,4 +26,5 @@ const Product = ({item, related}) => {
     )
 }
 
-export default Product
+export default ProductRelated
+

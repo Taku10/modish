@@ -40,8 +40,9 @@
     height: 35rem;
 }
 
-.details-image image{
-    width: 10%;
+.details-image img{
+    width: 80%;
+    height: 80%;
 }
 
 
@@ -253,4 +254,11 @@
     height: auto;
     max-height:999px;
     transition: all 0.5s cubic-bezier(1,0,1,0)
+}
+
+/* Related products section */
+
+.related-container{
+    border: 1px solid;
+    height: 20rem;
 }
