@@ -1,30 +1,40 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import Categories from './Categories'
 import Search from './Search'
 import SortingOptions from './SortingOptions'
 import Product from './Product'
 import InfiniteScroll from 'react-infinite-scroller';
+import {AiOutlineSearch} from 'react-icons/ai'
 
 const ShopProducts = ({ products }) => {
-  const[data, setData]=useState(products);
-  const[hasMore, setHasMore]= useState(true)
+  const [search, setSearch] = useState('')
+  const [data, setData] = useState(products);
+  const [hasMore, setHasMore] = useState(true)
 
-  const loadMore =()=>{
+  const loadMore = () => {
     setData(products)
   }
+
+  const search_data= data.filter((item) => item.title.toLowerCase().includes(search))
+  console.log(data)
 
   return (
     <div className='shop-products-container'>
       <div className='shop-products-wrapper'>
         <div className='shop-grid-left'>
           <Categories />
-          <Search />
+          <div className='search-container'> 
+            <form action="">
+            <input type="text" placeholder='Search Fruits' onChange={(e) => setSearch(e.target.value)}  />
+              <AiOutlineSearch className='search-icon' />
+            </form>
+          </div>
         </div>
         <div className='shop-grid-right'>
-          <SortingOptions />
+          <SortingOptions data={products}/>
           <div className='all-products'>
             <InfiniteScroll pageStart={0} loadMore={loadMore} hasMore={true || false} useWindow={false} className='infinite-scroller'>
-              {data.map((item, i) => (
+              {search_data.map((item, i) => (
                 <Product item={item} key={i} />
               ))}
             </InfiniteScroll>
