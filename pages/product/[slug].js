@@ -1,16 +1,17 @@
-import React, { useRef } from 'react'
+import React, { useRef, useContext,  } from 'react'
 import { client, urlFor } from '../../lib/client'
 import { HiMinus, HiPlus } from 'react-icons/hi'
 import { Accordian, Related } from '../../components'
 import { data } from '../../accordian/data'
+import { Context } from '../../context/StateContext'
 
 
 
 const ProductDetails = ({ products, relatedProducts }) => {
 
     const { title, price, image } = products
-    // console.log(relatedProducts)
-    const pic = useRef(image)
+    const useStateContext = useContext(Context);
+    const { qty, decreaseQty, increaseQty, onAdd } = useStateContext;
 
     return (
         <>
@@ -18,7 +19,7 @@ const ProductDetails = ({ products, relatedProducts }) => {
                 <div className='product-details-wrapper'>
                     <div className='details-grid-1'>
                         <div className='details-image'>
-                            <img ref={pic} src={urlFor(image && image[0])} />
+                            <img src={urlFor(image && image[0])} />
                         </div>
                     </div>
                     <div className='details-grid-2'>
@@ -54,11 +55,11 @@ const ProductDetails = ({ products, relatedProducts }) => {
                             </div>
                             <div className='cart-update'>
                                 <div className='item-counter-details'>
-                                    <button><HiMinus className='item-minus-details' /></button>
-                                    <p className='item-qty-details'>0</p>
-                                    <button><HiPlus className='item-plus-details' /></button>
+                                    <button><HiMinus className='item-minus-details' onClick={decreaseQty} /></button>
+                                    <p className='item-qty-details'>{qty}</p>
+                                    <button><HiPlus className='item-plus-details'  onClick={increaseQty}/></button>
                                 </div>
-                                <button className='add-to-cart-details'>ADD TO CART</button>
+                                <button className='add-to-cart-details' onClick={() => onAdd(products, qty)}>ADD TO CART</button>
                             </div>
                             <div className='accordian-container'>
                                 {data.map((item, i) => (

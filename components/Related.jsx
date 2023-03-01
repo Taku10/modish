@@ -12,8 +12,8 @@ const Related = ({ related, products }) => {
         <div className='related-container'>
             <h1>Related Products</h1>
             <div className='related-wrapper'>
-                {sub.map((item) => (
-                    <ProductRelated item={item} />
+                {sub.map((item, i) => (
+                    <ProductRelated item={item} key={i}/>
                 ))}
             </div>
 
