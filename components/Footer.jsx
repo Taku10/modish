@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { GrFacebookOption } from 'react-icons/gr'
 import { BsInstagram } from 'react-icons/bs'
 import { FaPinterestP } from 'react-icons/fa'
@@ -8,6 +8,8 @@ import Link from 'next/link'
 
 
 const Footer = () => {
+
+  const[letter, setLetter]=useState('');
   return (
     <div className='footer-inner-container'>
       <div className='footer-inner-wrapper'>
@@ -44,7 +46,7 @@ const Footer = () => {
         <div className='footer-newsletter footer-row'>
           <h3>NEWSLETTER</h3>
           <form action="">
-            <input type="text" onChange='' placeHolder='email@example.com' />
+            <input type="text" onChange={e => setLetter(e.target.value)} placeholder='email@example.com' />
             <button>SUBSCRIBE</button>
           </form>
         </div>

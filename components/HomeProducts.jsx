@@ -25,32 +25,32 @@ const HomeProducts = ({ products }) => {
 
                     <TabPanel>
                         <div className='item-panel-wrapper'>
-                            {products.filter((item) => item.bestseller ===true).slice(0, 8).map((item) => (
-                                <BestSeller item={item} />
+                            {products.filter((item) => item.bestseller ===true).slice(0, 8).map((item, i) => (
+                                <BestSeller item={item} key={i} />
                               
                             ))}
                         </div>
                     </TabPanel>
                     <TabPanel>
                     <div className='item-panel-wrapper'>
-                            {products.filter((item) => item.featured ===true).slice(0, 8).map((item) => (
-                                <Featured item={item} />
+                            {products.filter((item) => item.featured ===true).slice(0, 8).map((item, i) => (
+                                <Featured item={item} key={i} />
                               
                             ))}
                         </div>
                     </TabPanel>
                     <TabPanel>
                     <div className='item-panel-wrapper'>
-                            {products.filter((item) => item.sale ===true).slice(0, 6).map((item) => (
-                                <Sale item={item} />
+                            {products.filter((item) => item.sale ===true).slice(0, 6).map((item, i) => (
+                                <Sale item={item} key={i} />
                               
                             ))}
                         </div>
                     </TabPanel>
                     <TabPanel>
                     <div className='item-panel-wrapper'>
-                            {products.filter((item) => item.top_rate ===true).slice(0, 8).map((item) => (
-                                <TopRate item={item} />
+                            {products.filter((item) => item.top_rate ===true).slice(0, 8).map((item, i) => (
+                                <TopRate item={item} key={i} />
                               
                             ))}
                         </div>

@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { CartBanner } from '../components'
 import { HiMinus, HiPlus } from 'react-icons/hi'
 import bag from '../images/bag.png'
 import watch from '../images/watch.png'
+import { Context } from '../context/StateContext'
+import { urlFor } from '../lib/client'
 
 
 const Cart = () => {
+
+  const useStateContext = useContext(Context);
+  const { cartItems, setCartItems, totalPrice, totalQuantities, toggleCartQuantity, onRemove } = useStateContext;
+
+  console.log(cartItems, totalPrice, totalQuantities);
+
+
   return (
     <div className='cart-container'>
       <CartBanner />
@@ -20,51 +29,39 @@ const Cart = () => {
               <th>TOTAL</th>
             </tr>
             <div className="cart-items-container">
-              <tr className='cart-items'>
-                <td className='cart-image-container'>
-                  <div className='cart-image'>
-                    <img src={bag.src} alt="image-1" />
-                  </div>
-                </td>
-                <td>Men's Watch</td>
-                <td>R244</td>
-                <td>
-                  <div className='item-counter'>
-                    <button><HiMinus className='item-minus' /></button>
-                    <p className='item-qty'>0</p>
-                    <button><HiPlus className='item-plus' /></button>
-                  </div>
-                </td>
-                <td>R 2000</td>
+              {
+                cartItems.map((item) => (
+                  <tr className='cart-items'>
+                    <td className='cart-image-container'>
+                      <div className='cart-image'>
+                        <img src={urlFor(item?.image[0])} alt="image-1" />
+                      </div>
+                    </td>
+                    <td>{item.title}</td>
+                    <td>R {item.price}</td>
+                    <td>
+                      <div className='item-counter'>
+                        <button Onclick={()=> toggleCartQuantity( item._id, 'dec')}><HiMinus className='item-minus' /></button>
+                        <p className='item-qty'>{item.quantity}</p>
+                        <button Onclick={()=> toggleCartQuantity( item._id, 'inc')}><HiPlus className='item-plus' /></button>
+                      </div>
+                    </td>
+                    <td>R {item.price * item.quantity}</td>
 
-              </tr>
-              <tr className='cart-items'>
-                <td className='cart-image-container'>
-                  <div className="cart-image">
-                    <img src={watch.src} alt="image-1" />
-                  </div>
-                </td>
-                <td>Men's Watch</td>
-                <td>R244</td>
-                <td>
-                  <div className='item-counter'>
-                    <button><HiMinus className='item-minus' /></button>
-                    <p className='item-qty'>0</p>
-                    <button><HiPlus className='item-plus' /></button>
-                  </div>
-                </td>
-                <td>R 2000</td>
-              </tr>
+                  </tr>
+                ))
+              }
+
             </div>
           </tbody>
         </table>
         <div className='total-container'>
-            <h2>CART TOTALS</h2>
-            <div className='subtotal-wrapper'>
-              <p>Subtotal:</p>
-              <p className='subtotal'>R 488</p>
-            </div>
-            <button>PROCEED TO CHECKOUT</button>
+          <h2>CART TOTALS</h2>
+          <div className='subtotal-wrapper'>
+            <p>Subtotal:</p>
+            <p className='subtotal'>{totalPrice}</p>
+          </div>
+          <button>PROCEED TO CHECKOUT</button>
         </div>
       </div>
     </div>

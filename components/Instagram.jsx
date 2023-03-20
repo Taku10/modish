@@ -9,8 +9,8 @@ const Instagram = ({instagram}) => {
         <div className='instagram-wrapper'>
             <h1>@ FOLLOW US ON INSTAGRAM</h1>
             <div className='instagram-post-wrapper'>
-                {instagram.map((item)=>
-                  <InstaPost item={item}/>
+                {instagram.map((item, i)=>
+                  <InstaPost item={item} key={i} />
                 )}
             </div>
         </div>

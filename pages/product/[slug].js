@@ -55,9 +55,9 @@ const ProductDetails = ({ products, relatedProducts }) => {
                             </div>
                             <div className='cart-update'>
                                 <div className='item-counter-details'>
-                                    <button><HiMinus className='item-minus-details' onClick={decreaseQty} /></button>
+                                    <button onClick={decreaseQty}><HiMinus className='item-minus-details'  /></button>
                                     <p className='item-qty-details'>{qty}</p>
-                                    <button><HiPlus className='item-plus-details'  onClick={increaseQty}/></button>
+                                    <button onClick={increaseQty}><HiPlus className='item-plus-details'  /></button>
                                 </div>
                                 <button className='add-to-cart-details' onClick={() => onAdd(products, qty)}>ADD TO CART</button>
                             </div>

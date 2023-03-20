@@ -84,13 +84,13 @@ export const StateContext = ({ children }) => {
         }
 
         toast.success('Added to Cart')
-        console.log("added")
+        console.log("added", product, quantity)
     }
 
 
     const increaseQty = () => {
         setQty((prevQty) => prevQty + 1)
-        console.log("+")
+        console.log("plus")
     }
 
     const decreaseQty = () => {
@@ -98,8 +98,9 @@ export const StateContext = ({ children }) => {
             if (prevQty - 1 < 1) return 1; //keep decrementing, but not go lower than one
 
             return prevQty - 1;
-
+            
         })
+        console.log("minus")
     }
 
     return (
