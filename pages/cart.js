@@ -1,24 +1,28 @@
-import React, { useContext } from 'react'
-import { CartBanner } from '../components'
+import React, { useContext, useState, useEffect } from 'react'
+import { CartBanner, EmptyCart } from '../components'
 import { HiMinus, HiPlus } from 'react-icons/hi'
 import bag from '../images/bag.png'
 import watch from '../images/watch.png'
 import { Context } from '../context/StateContext'
 import { urlFor } from '../lib/client'
+import {AiFillCloseCircle}  from 'react-icons/ai';
+
+
 
 
 const Cart = () => {
-
+  const[itemPrice, setItemPrice]=useState(0);
   const useStateContext = useContext(Context);
-  const { cartItems, setCartItems, totalPrice, totalQuantities, toggleCartQuantity, onRemove } = useStateContext;
+  const { cartItems, setCartItems, totalPrice, totalQuantities, toggleCartItemQuantity, onRemove, } = useStateContext;
 
-  console.log(cartItems, totalPrice, totalQuantities);
+  
 
 
   return (
     <div className='cart-container'>
       <CartBanner />
-      <div className='cart-products-container'>
+      {cartItems < 1 && <EmptyCart />}
+      { cartItems.length >= 1 && <div className='cart-products-container'>
         <table className='cart-table'>
           <tbody className='cart-table-body'>
             <tr className='cart-headers'>
@@ -26,12 +30,14 @@ const Cart = () => {
               <th>PRODUCT</th>
               <th>PRICE</th>
               <th>QUANTITY</th>
-              <th>TOTAL</th>
+
             </tr>
             <div className="cart-items-container">
               {
-                cartItems.map((item) => (
+                 cartItems.map((item) => (
+                  
                   <tr className='cart-items'>
+                    <AiFillCloseCircle  className='remove-cart-item' onClick={()=> onRemove(item)}/>
                     <td className='cart-image-container'>
                       <div className='cart-image'>
                         <img src={urlFor(item?.image[0])} alt="image-1" />
@@ -41,12 +47,11 @@ const Cart = () => {
                     <td>R {item.price}</td>
                     <td>
                       <div className='item-counter'>
-                        <button Onclick={()=> toggleCartQuantity( item._id, 'dec')}><HiMinus className='item-minus' /></button>
+                        <button onClick={()=> toggleCartItemQuantity( item._id,'dec')}><HiMinus className='item-minus' /></button>
                         <p className='item-qty'>{item.quantity}</p>
-                        <button Onclick={()=> toggleCartQuantity( item._id, 'inc')}><HiPlus className='item-plus' /></button>
+                        <button onClick={()=> toggleCartItemQuantity( item._id,'inc')}><HiPlus className='item-plus' /></button>
                       </div>
                     </td>
-                    <td>R {item.price * item.quantity}</td>
 
                   </tr>
                 ))
@@ -59,11 +64,11 @@ const Cart = () => {
           <h2>CART TOTALS</h2>
           <div className='subtotal-wrapper'>
             <p>Subtotal:</p>
-            <p className='subtotal'>{totalPrice}</p>
+            <p className='subtotal'>R {totalPrice}</p>
           </div>
           <button>PROCEED TO CHECKOUT</button>
         </div>
-      </div>
+      </div>}
     </div>
   )
 }

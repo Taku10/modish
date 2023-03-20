@@ -17,6 +17,7 @@ export const StateContext = ({ children }) => {
     const [showSearch, setShowSearch] = useState(false);
     const [cartItems, setCartItems] = useState([]);
     const [totalPrice, setTotalPrice] = useState(0);
+    const [itemTotal, setItemTotal] =useState(0);
     const [totalQuantities, setTotalQuantities] = useState(0);
     const [qty, setQty] = useState(1)
     const [video, setVideo] = useState(false)
@@ -43,11 +44,14 @@ export const StateContext = ({ children }) => {
             setCartItems([...newCartItems, { ...foundProduct, quantity: foundProduct.quantity + 1 }]);
             setTotalPrice((prev) => prev + foundProduct.price);
             setTotalQuantities((prev) => prev + 1)
+            setItemTotal((prev)=> prev + foundProduct.price)
+            console.log("Add cart")
         } else if (value === 'dec') {
             if (foundProduct.quantity > 1) {
                 setCartItems([...newCartItems, { ...foundProduct, quantity: foundProduct.quantity - 1 }]);
                 setTotalPrice((prev) => prev - foundProduct.price);
                 setTotalQuantities((prev) => prev - 1)
+                console.log("minus cart");
             }
 
         }
@@ -68,6 +72,8 @@ export const StateContext = ({ children }) => {
         const checkProduct = cartItems.find((item) => item._id === product._id)
         setTotalPrice((prev) => prev + product.price * quantity);
         setTotalQuantities((prev) => prev + quantity)
+        setItemTotal((prev)=> prev + product.price);
+
 
         if (checkProduct) {
             const updatedCartItems = cartItems.map((cartProduct) => {
@@ -91,6 +97,7 @@ export const StateContext = ({ children }) => {
     const increaseQty = () => {
         setQty((prevQty) => prevQty + 1)
         console.log("plus")
+
     }
 
     const decreaseQty = () => {
@@ -104,7 +111,7 @@ export const StateContext = ({ children }) => {
     }
 
     return (
-        <Context.Provider value={{setTotalPrice, setTotalQuantities, setCartItems, log, setLog, menu, setMenu, video, setVideo, onRemove, showCart, setShowCart, cartItems, totalPrice, totalQuantities, qty, increaseQty, decreaseQty, onAdd, toggleCartItemQuantity, showSearch, setShowSearch }}>
+        <Context.Provider value={{setTotalPrice, setTotalQuantities, setCartItems, itemTotal,log, setLog, menu, setMenu, video, setVideo, onRemove, showCart, setShowCart, cartItems, totalPrice, totalQuantities, qty, increaseQty, decreaseQty, onAdd, toggleCartItemQuantity, showSearch, setShowSearch }}>
             {children}
         </Context.Provider>
     )
