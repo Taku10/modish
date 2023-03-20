@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import Categories from './Categories'
 import Search from './Search'
 import SortingOptions from './SortingOptions'
@@ -6,11 +6,13 @@ import Product from './Product'
 import InfiniteScroll from 'react-infinite-scroller';
 import { AiOutlineSearch } from 'react-icons/ai'
 
+
 const ShopProducts = ({ products }) => {
   const [search, setSearch] = useState('')
   const [data, setData] = useState(products);
-  const [sort, setSort] = useState(products)
-
+  const [sort, setSort] = useState(products);
+  
+  
 
 
   const handleSort = (event) => {
