@@ -6,16 +6,48 @@ import watch from '../images/watch.png'
 import { Context } from '../context/StateContext'
 import { urlFor } from '../lib/client'
 import {AiFillCloseCircle}  from 'react-icons/ai';
+import getStripe from '../lib/getStripe'
+import toast from 'react-hot-toast'
 
 
 
 
 const Cart = () => {
   const[itemPrice, setItemPrice]=useState(0);
+  const[user, setUser] = useState(false);
   const useStateContext = useContext(Context);
   const { cartItems, setCartItems, totalPrice, totalQuantities, toggleCartItemQuantity, onRemove, } = useStateContext;
 
   
+  
+  const handleCheckout = async () => {
+    const stripe = await getStripe();
+
+    // make api request
+    const response = await fetch('/api/stripe', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(cartItems),
+    });
+
+
+    if (response.statusCode === 500) return;
+
+    const data = await response.json();
+   
+
+
+
+
+
+
+      toast.loading('Redirecting...');
+      stripe.redirectToCheckout({ sessionId: data.id });
+      
+    
+  }
 
 
   return (
@@ -66,7 +98,7 @@ const Cart = () => {
             <p>Subtotal:</p>
             <p className='subtotal'>R {totalPrice}</p>
           </div>
-          <button>PROCEED TO CHECKOUT</button>
+          <button onClick={handleCheckout}>PROCEED TO CHECKOUT</button>
         </div>
       </div>}
     </div>

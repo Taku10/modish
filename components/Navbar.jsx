@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react'
+import React,{useState, useEffect, useContext} from 'react'
 import { GrFacebookOption } from 'react-icons/gr'
 import { BsInstagram } from 'react-icons/bs'
 import { FaPinterestP } from 'react-icons/fa'
@@ -7,10 +7,15 @@ import { AiFillYoutube } from 'react-icons/ai'
 import { BsPersonCircle } from 'react-icons/bs'
 import { BsBag } from 'react-icons/bs'
 import Link from 'next/link'
+import { Context } from '../context/StateContext'
 
 
 const Navbar = () => {
  const[nav, setNav]=useState(false)
+
+ const useStateContext = useContext(Context);
+ const{totalQuantities} = useStateContext;
+
 
   useEffect(() => {
     const changeNav = () => {
@@ -57,7 +62,7 @@ const Navbar = () => {
             <BsPersonCircle className='log-cart-icon' />
           </div>
           <div className='cart'>
-            <span>0</span>
+            <span>{totalQuantities}</span>
             <Link href='/cart'><BsBag className='log-cart-icon' /></Link>
           </div>
         </div>

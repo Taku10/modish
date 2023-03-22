@@ -15,11 +15,13 @@ import "slick-carousel/slick/slick-theme.css";
 import 'react-tabs/style/react-tabs.css';
 import { useStateContext } from '../context/StateContext'
 import { StateContext } from '../context/StateContext'
+import { Toaster } from 'react-hot-toast'
 
 export default function App({ Component, pageProps }) {
   return (
     <StateContext>
       <Layout>
+        <Toaster />
         <Component {...pageProps} />
       </Layout>
     </StateContext>
