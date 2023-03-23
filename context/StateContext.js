@@ -23,6 +23,7 @@ export const StateContext = ({ children }) => {
     const [video, setVideo] = useState(false)
     const [menu, setMenu] = useState(false)
     const [log, setLog] = useState(false)
+    const [search, setSearch] = useState('')
 
 
 
@@ -111,7 +112,7 @@ export const StateContext = ({ children }) => {
     }
 
     return (
-        <Context.Provider value={{setTotalPrice, setTotalQuantities, setCartItems, itemTotal,log, setLog, menu, setMenu, video, setVideo, onRemove, showCart, setShowCart, cartItems, totalPrice, totalQuantities, qty, increaseQty, decreaseQty, onAdd, toggleCartItemQuantity, showSearch, setShowSearch }}>
+        <Context.Provider value={{search, setSearch, setTotalPrice, setTotalQuantities, setCartItems, itemTotal,log, setLog, menu, setMenu, video, setVideo, onRemove, showCart, setShowCart, cartItems, totalPrice, totalQuantities, qty, increaseQty, decreaseQty, onAdd, toggleCartItemQuantity, showSearch, setShowSearch }}>
             {children}
         </Context.Provider>
     )

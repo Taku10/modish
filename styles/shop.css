@@ -151,11 +151,11 @@
 }
 
 
-.search-data, .all-data, .zero-hundred{
+.search-data{
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap:1rem
+    gap:1rem;
 }
 
 .product-container {
@@ -270,6 +270,8 @@
 
 .search-container form{
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .search-container form input{
@@ -287,11 +289,27 @@
 
 .search-icon{
     position: absolute;
-    right:2rem;
+    right:40%;
     top: 1rem;
 }
 
 
+/* Search not found seaction */
+
+.not-found-container{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    right: 35%;
+   
+}
+
+.not-found-message{
+    font-family: var(---mont);
+    font-size: 2rem;
+    color: var(---third);
+    
+}
 
 
 

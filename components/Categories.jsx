@@ -1,6 +1,9 @@
-import React from 'react'
+import React, {useState} from 'react'
 
-const Categories = () => {
+const Categories = ({data}) => {
+    const[filter, setFilter]=useState(data);
+    console.log(filter);
+    
     return (
         <div className='categories-container'>
             <h2>Categories</h2>
