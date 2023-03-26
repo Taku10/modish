@@ -163,7 +163,7 @@
     width: 18rem;
     display: flex;
     flex-direction: column;
-    gap: .8rem
+    gap: .8rem;
 }
 
 .product-container a{
@@ -183,6 +183,7 @@
     transition: .5s ease;
     position: relative;
     overflow: hidden;
+    border-radius: 1rem;
 }
 
 .product-image:hover {
@@ -289,7 +290,6 @@
     position: relative;
     display: flex;
     justify-content: center;
-    border: 1px solid;
     width: 16rem;
 }
 
@@ -300,6 +300,9 @@
     font-family: var(---mont);
     font-size: 13px;
     color: #555555;
+    border: 1px solid ;
+    outline: none;
+    border-radius:1rem ;
 }
 
 .search-container form input:focus{

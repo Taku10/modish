@@ -121,6 +121,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 1rem;
 }
 
 .access img {
@@ -298,6 +299,7 @@
     transition: .5s ease;
     position: relative;
     overflow: hidden;
+    border-radius: 1rem;
 }
 
 .item-image:hover {
