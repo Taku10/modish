@@ -254,12 +254,24 @@
     font-family: var(---mont);
 }
 
-.categories-options p{
+.categories-options button{
     color: var(---third);
     font-size: 15px;
     font-weight: 400;
     font-family: var(---mont);
     cursor: pointer;
+    border: 1px solid;
+    width: 8rem;
+    border-radius: .3rem;
+    background-color: white;
+    transition: .4s ease;
+    height: 2rem;
+    font-weight: 500;
+}
+
+.categories-options button:hover{
+    background-color: #d86a59;
+    color: white;
 }
 
 .categories-options p:hover{
@@ -268,14 +280,21 @@
 
 /* Search Section */
 
-.search-container form{
-    position: relative;
+.search-container{
     display: flex;
     justify-content: center;
 }
 
+.search-container form{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    border: 1px solid;
+    width: 16rem;
+}
+
 .search-container form input{
-    width:12rem;
+    width:100%;
     height: 3rem;
     padding: 0rem 1rem;
     font-family: var(---mont);
@@ -287,10 +306,21 @@
     outline: none;
 }
 
-.search-icon{
+.search-icon, .clear-search{
     position: absolute;
-    right:40%;
+    right:10%;
     top: 1rem;
+}
+
+.clear-search{
+    cursor: pointer;
+    color: #444444;
+    font-size: 1.3rem;
+    transition: .4s ease pulse;
+}
+
+.clear-search:hover{
+    transform: scale(1.1);
 }
 
 
