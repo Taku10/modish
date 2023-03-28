@@ -24,6 +24,151 @@
 }
 
 .watch-banner-container{
-    background-image: url('');
-    
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('../images/watch_banner.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30rem;
+
+}
+
+.watch-banner-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+.watch-banner-wrapper h1 {
+    font-size: 5rem;
+    color: white;
+    font-family: var(---mont);
+
+}
+
+.watch-banner-wrapper p {
+    font-size: 1.2rem;
+    color: white;
+    font-family: var(---mont);
+}
+
+.watch-container{
+    height: 100%;
+    width: 100%;
+  }
+
+  
+
+
+
+.watch-products-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    padding-top:4rem ;
+
+}
+
+.watch-products-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+ 
+    width: 80%;
+}
+
+.watch-grid-left{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+ 
+}
+
+.watch-grid-right{
+    display: flex;
+    flex-direction: column;
+    gap:4rem;
+}
+
+/* Sunglasses section */
+.glasses-container{
+    width: 100%;
+    height: 100%;
+}
+
+.glasses-banner-container{
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('../images/glasses_banner.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30rem;
+
+}
+
+.glasses-banner-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+.glasses-banner-wrapper h1 {
+    font-size: 4rem;
+    color: white;
+    font-family: var(---mont);
+
+}
+
+.glasses-banner-wrapper p {
+    font-size: 1.2rem;
+    color: white;
+    font-family: var(---mont);
+}
+
+.watch-container{
+    height: 100%;
+    width: 100%;
+  }
+
+  
+
+
+
+.glasses-products-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    padding-top:4rem ;
+
+}
+
+.glasses-products-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+ 
+    width: 80%;
+}
+
+.glasses-grid-left{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+ 
+}
+
+.glasses-grid-right{
+    display: flex;
+    flex-direction: column;
+    gap:4rem;
 }

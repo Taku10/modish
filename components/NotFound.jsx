@@ -1,7 +1,7 @@
 import React, {useContext} from 'react'
 import { Context } from '../context/StateContext'
 
-const NotFoundSearch = () => {
+const NotFound = () => {
   const useStateContext = useContext(Context);
   const{search, setSearch} = useStateContext;
 
@@ -13,4 +13,4 @@ const NotFoundSearch = () => {
   )
 }
 
-export default NotFoundSearch
+export default NotFound
