@@ -172,3 +172,81 @@
     flex-direction: column;
     gap:4rem;
 }
+
+/* bags section */
+.bags-container{
+    width: 100%;
+    height: 100%;
+}
+
+.bags-banner-container{
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('../images/glasses_banner.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 30rem;
+
+}
+
+.bags-banner-wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+}
+
+.bags-banner-wrapper h1 {
+    font-size: 4rem;
+    color: white;
+    font-family: var(---mont);
+
+}
+
+.bags-banner-wrapper p {
+    font-size: 1.2rem;
+    color: white;
+    font-family: var(---mont);
+}
+
+.bags-container{
+    height: 100%;
+    width: 100%;
+  }
+
+  
+
+
+
+.bags-products-container{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    padding-top:4rem ;
+
+}
+
+.bags-products-wrapper{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+ 
+    width: 80%;
+}
+
+.bags-grid-left{
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+ 
+}
+
+.bags-grid-right{
+    display: flex;
+    flex-direction: column;
+    gap:4rem;
+}

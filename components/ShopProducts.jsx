@@ -19,6 +19,7 @@ const ShopProducts = ({ products }) => {
 
   const ref = useRef(null)
 
+  console.log(data)
 
 
 
